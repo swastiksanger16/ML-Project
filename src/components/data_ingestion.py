@@ -10,6 +10,8 @@ from dataclasses import dataclass
 from src.components.data_transform import DataTransformation
 from src.components.data_transform import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainingConfig
+from src.components.model_trainer import ModelTraining
 
 @dataclass
 class DataIngestionConfig:
@@ -54,5 +56,8 @@ if __name__=="__main__":
     
     data_tranformation=DataTransformation()
     train_arr,test_arr,_=data_tranformation.initiate_data_transformation(train_data,test_data)
+    
+    modelTrain=ModelTraining()
+    modelTrain.initiate_model_training(train_arr,test_arr)
             
             
